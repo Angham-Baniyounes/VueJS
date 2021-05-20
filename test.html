@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue JS</title>
+</head>
+<body>
+    <div id="test-app">
+        <!-- <p v-html="heading"></p>
+        <p v-text="heading"></p>
+        <p>Welcome To Vue App</p>
+        <p>Welcome {{ name }}</p>
+        <p> {{ name.length > 5 ? name.toUpperCase() : name.toLowerCase() }}</p>
+        <p>Your age : {{ age , 'Years'}}</p>
+        <p>Your result {{ isPass ? 'Pass' : 'Fail'}}</p>
+        <p>Your best skill is : {{ skills[2] }} </p>
+        <p>course name : {{degrees[0].courseName}}</p>
+        <p>course degree : {{degrees[0].courseDegree}}</p>
+        <p>{{ sayHi() }}</p>
+        <p>Your age in days : {{ yourAgeInDays() }}</p>
+        <p>{{ date }}</p>
+        <button @click='getDate()'>Get Date</button>
+        <hr>
+        <p v-text='name'></p>
+        <p v-text="age > 25 ? age : 'Try Again' "></p>
+        <p v-text='"Hi " + name ' >Hi</p> -->
+
+        <!-- <ul>
+            <li v-for="skill in skills">
+                {{ skill }}
+            </li>
+        </ul>
+        <hr>
+        <ul>
+            <li v-for="(skill, index) in skills">
+                {{ index }} : {{skill}}
+            </li>
+        </ul>
+        <hr>
+        <ul>
+            her index will get the values || and skill will be equal indexes for element in array
+            <li v-for="(index, skill) in skills">
+                {{ index }} : {{skill}}
+            </li>
+        </ul>
+        <hr>
+        <ul>
+            <li v-for="skill in skills" v-text="skill"></li>
+        </ul> -->
+
+        <!-- <p v-if="name" v-text="name"></p>
+        <p v-else> No user name</p>
+
+        <p v-if='uname' v-text='uname'></p>
+        <p v-else>There's no name</p>
+        
+        <p v-if="age > 30" v-text="age"></p>
+        
+        <p v-if='age > 30' >30</p>
+        <p v-else-if="age < 30 && age > 20" v-text="age"></p>
+        <p v-else>Nothing to show</p> -->
+    </div> 
+    
+    <script src="js/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#test-app',
+            data: {
+                name: 'angham',
+                age: 29,
+                skills: ['HTML', 'CSS', 'Js'],
+                isPass: true,
+                date: 'Today',
+                degrees: [
+                    {
+                        courseName: 'HTML',
+                        courseDegree: '99%',
+                    },
+                    {
+                        courseName: 'CSS',
+                        courseDegree: '90%',
+                    },
+                    {
+                        courseName: 'Js',
+                        courseDegree: '80%',
+                    },
+                ],
+                heading: '<h1>Vue Js</h1>',
+                username: '',
+                uname: 'Nagham',
+            },
+            methods: {
+                sayHi: function() {
+                    return 'Hi ' + this.name;
+                },
+                yourAgeInDays: function() {
+                    return this.age * 365;
+                },
+                getDate: function() {
+                    var d = new Date();
+                    this.date = d.getHours();
+                }
+            },
+        });
+    </script>
+</body>
+</html>
